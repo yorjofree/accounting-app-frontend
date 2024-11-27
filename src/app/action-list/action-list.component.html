@@ -1,6 +1,24 @@
 <ul>
-    <li>{{ record.get() }}</li>
-    <li>{{ record.post() }}</li>
-    <li>{{ record.update() }}</li>
-    <li>{{ record.delete() }}</li>
+    <li (click)="getRecords()">{{ record.get() }}</li>
+    <li (click)="postRecord()">{{ record.post() }}</li>
+    <li (click)="updateRecord()">{{ record.update() }}</li>
+    <li (click)="deleteRecord()">{{ record.delete() }}</li>
 </ul>
+
+@switch (action()) {
+    @case ('get') {
+        get record
+    }
+    @case ('post') {
+        post record
+    }
+    @case ('update') {
+        update record
+    }
+    @case ('delete') {
+        delete record
+    }
+    @default {
+        no action
+    }
+}

@@ -13,4 +13,26 @@ export class ActionListComponent {
     update: signal('Update a record'),
     delete: signal('Delete a record')
   };
+
+  action = signal('no action');
+
+  getRecords(): void {
+    console.log('Changing state of action signal to "get"');
+    this.action.set('get');
+  }
+
+  postRecord(): void {
+    console.log('Changing state of action signal to "post"');
+    this.action.set('post');
+  }
+
+  updateRecord(): void {
+    console.log('Changing state of action signal to "update"');
+    this.action.set('update');
+  }
+
+  deleteRecord(): void {
+    console.log('Changing state of action signal to "delete"');
+    this.action.set('delete');
+  }
 }
