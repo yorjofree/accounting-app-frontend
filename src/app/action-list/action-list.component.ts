@@ -1,8 +1,9 @@
 import { Component, signal } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-action-list',
-  imports: [],
+  imports: [RouterOutlet, RouterLink],
   templateUrl: './action-list.component.html',
   styleUrl: './action-list.component.css'
 })

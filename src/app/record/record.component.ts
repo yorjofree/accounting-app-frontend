@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './record.component.css'
 })
 export class RecordComponent {
-
+  record = {};
 }
