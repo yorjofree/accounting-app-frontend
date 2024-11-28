@@ -1,8 +1,14 @@
+h2 {
+    text-align: center;
+}
+
 ul {
     list-style-position: inside;
     list-style-type: square;
     margin: 0px;
     padding: 0px;
+    display: flex;
+    justify-content: center;
 }
 
 li {
