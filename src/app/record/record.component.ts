@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-record',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './record.component.css'
 })
 export class RecordComponent {
-  record = {};
+  record = input.required<{type: string, account: string, amount: number}>();
 }
