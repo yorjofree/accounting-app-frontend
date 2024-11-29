@@ -1,0 +1,16 @@
+.record {
+    display: flex;
+    flex-direction: row;
+}
+
+.type, .account {
+    width: 40%;
+    border: 1px solid;
+    margin: 0px;
+}
+
+.amount {
+    width: 20%;
+    border: 1px solid;
+    margin: 0px;
+}

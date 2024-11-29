@@ -1,0 +1,34 @@
+.table {
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.headings {
+    display: flex;
+    flex-direction: row;
+}
+
+h4 {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+}
+
+.type, .account {
+    width: 40%;
+    border: 1px solid;
+}
+
+.amount {
+    width: 20%;
+    border: 1px solid;
+}
+
+app-record {
+    display: flex;
+    flex-direction: row;
+}
