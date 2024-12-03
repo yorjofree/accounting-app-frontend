@@ -10,14 +10,22 @@ import { RecordComponent } from '../record/record.component';
 export class RecordTableComponent {
   records = [
     {
+      id: 1,
       type: 'entrata',
       account: 'cassa',
       amount: 10.00
     },
     {
+      id: 2,
       type: 'uscita',
       account: 'conto corrente',
       amount: -5.00
+    },
+    {
+      id: 3,
+      type: 'entrata',
+      account: 'cassa',
+      amount: 7.50
     }
   ]
 }

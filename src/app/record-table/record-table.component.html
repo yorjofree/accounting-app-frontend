@@ -4,6 +4,7 @@
         <div class="account"><h4>Account</h4></div>
         <div class="amount"><h4>Amount</h4></div>
     </div>
-    <app-record [record]="records[0]"/>
-    <app-record [record]="records[1]"/>
+    @for (record of records; track record.id) {
+        <app-record [record]="record"/>
+    }
 </div>
