@@ -27,8 +27,3 @@ h4 {
     width: 20%;
     border: 1px solid;
 }
-
-app-record {
-    display: flex;
-    flex-direction: row;
-}
