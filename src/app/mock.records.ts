@@ -1,4 +1,6 @@
-export const RECORDS = [
+import { Record } from "./record.interface";
+
+export const RECORDS: Record[] = [
     {
         id: 1,
         type: 'entrata',
