@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-type-field',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './type-field.component.css'
 })
 export class TypeFieldComponent {
-
+  type = new FormControl('entrata');
 }
