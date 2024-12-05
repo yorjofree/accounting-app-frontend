@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-type-field',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './type-field.component.html',
   styleUrl: './type-field.component.css'
 })
