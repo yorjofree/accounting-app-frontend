@@ -1,2 +1,5 @@
 <label for="type">Type: </label>
 <input id="type" type="text" [formControl]="type">
+<button type="button" (click)="updateType()">Update Type</button>
+
+<p>{{ type.value }}</p>

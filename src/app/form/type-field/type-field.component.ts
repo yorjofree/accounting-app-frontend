@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -9,4 +9,10 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class TypeFieldComponent {
   type = new FormControl('entrata');
+  typeValue = signal(this.type.value);
+
+  updateType() {
+    this.typeValue.set(this.type.value);
+    this.type.setValue('new value');
+  }
 }

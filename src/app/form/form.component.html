@@ -1,4 +1,15 @@
-<p>form works!</p>
 <app-type-field />
 <app-account-field />
 <app-amount-field />
+<p>{{ typeValue() }}</p>
+
+<form action="" [formGroup]="formGroup">
+    <label for="type">Type: </label>
+    <input id="type" type="text" formControlName="type">
+
+    <label for="account">Account: </label>
+    <input id="account" type="text" formControlName="account">
+
+    <label for="amount">Amount: </label>
+    <input id="amount" type="text" formControlName="amount">
+</form>
