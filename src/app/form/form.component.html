@@ -3,7 +3,7 @@
 <app-amount-field />
 <p>{{ typeValue() }}</p>
 
-<form action="" [formGroup]="formGroup">
+<form action="" [formGroup]="recordForm" (ngSubmit)="onSubmit()">
     <label for="type">Type: </label>
     <input id="type" type="text" formControlName="type">
 
@@ -12,4 +12,10 @@
 
     <label for="amount">Amount: </label>
     <input id="amount" type="text" formControlName="amount">
+
+    <button type="submit" [disabled]="!recordForm.valid">Submit</button>
+
+    <p>newRecord.type: {{ newRecord.type() }}</p>
+    <p>newRecord.account: {{ newRecord.account() }}</p>
+    <p>newRecord.amount: {{ newRecord.amount() }}</p>
 </form>
