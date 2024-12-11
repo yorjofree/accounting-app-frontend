@@ -1,7 +1,4 @@
-import { Component, computed, inject, signal, viewChild } from '@angular/core';
-import { TypeFieldComponent } from './type-field/type-field.component';
-import { AccountFieldComponent } from './account-field/account-field.component';
-import { AmountFieldComponent } from './amount-field/amount-field.component';
+import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RecordService } from '../record.service';
 
@@ -40,7 +37,7 @@ export class FormComponent {
 
     if (typeof this.recordForm.value.type === 'string' && typeof this.recordForm.value.account === 'string' && typeof this.recordForm.value.amount === 'string') {
       this.recordService.post({
-        id: 0,
+        id: 1,
         type: this.recordForm.value.type,
         account: this.recordForm.value.account,
         amount: parseFloat(this.recordForm.value.amount),
