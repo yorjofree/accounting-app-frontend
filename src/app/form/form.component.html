@@ -1,8 +1,3 @@
-<app-type-field />
-<app-account-field />
-<app-amount-field />
-<p>{{ typeValue() }}</p>
-
 <form action="" [formGroup]="recordForm" (ngSubmit)="onSubmit()">
     <label for="type">Type: </label>
     <input id="type" type="text" formControlName="type">

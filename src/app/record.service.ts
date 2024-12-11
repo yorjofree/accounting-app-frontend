@@ -1,14 +1,23 @@
 import { Injectable } from '@angular/core';
 import { RECORDS } from './mock.records';
+import { Record } from './record.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecordService {
-
-  constructor() { }
   
+  records: Record[];
+
+  constructor() { 
+    this.records = RECORDS;
+  }
+
   get() {
-    return RECORDS;
+    return this.records;
+  }
+
+  post(newRecord: Record) {
+    this.records.push(newRecord);
   }
 }

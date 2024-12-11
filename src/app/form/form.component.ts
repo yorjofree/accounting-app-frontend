@@ -3,23 +3,22 @@ import { TypeFieldComponent } from './type-field/type-field.component';
 import { AccountFieldComponent } from './account-field/account-field.component';
 import { AmountFieldComponent } from './amount-field/amount-field.component';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RecordService } from '../record.service';
 
 @Component({
   selector: 'app-form',
-  imports: [TypeFieldComponent, AccountFieldComponent, AmountFieldComponent, ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
 export class FormComponent {
-  typeField = viewChild(TypeFieldComponent);
-  typeValue = computed(() => this.typeField()?.typeValue());
-  typeTest = 10;
-
+  
   formBuilder = inject(FormBuilder);
+  recordService = inject(RecordService);
   recordForm = this.formBuilder.group({
-    type: ['entrata'],
-    account: ['cassa'],
-    amount: [10.00, [Validators.required, Validators.pattern('[0-9]*')]]
+    type: ['entrata', [Validators.required]],
+    account: ['cassa', [Validators.required]],
+    amount: ['10.00', [Validators.required, Validators.pattern('[0-9]+\\.?[0-9]*')]]
   });
 
   newRecord = {
@@ -36,7 +35,19 @@ export class FormComponent {
       this.newRecord.account.set(this.recordForm.value.account);
     }
     if (this.recordForm.value.amount) {
-      this.newRecord.amount.set(this.recordForm.value.amount.toString());
+      this.newRecord.amount.set(this.recordForm.value.amount);
+    }
+
+    if (typeof this.recordForm.value.type === 'string' && typeof this.recordForm.value.account === 'string' && typeof this.recordForm.value.amount === 'string') {
+      this.recordService.post({
+        id: 0,
+        type: this.recordForm.value.type,
+        account: this.recordForm.value.account,
+        amount: parseFloat(this.recordForm.value.amount),
+      });
+    }
+    else {
+      console.error('typeof error');
     }
   }
 }
