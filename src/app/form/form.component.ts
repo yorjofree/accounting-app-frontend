@@ -35,16 +35,20 @@ export class FormComponent {
       this.newRecord.amount.set(this.recordForm.value.amount);
     }
 
-    if (typeof this.recordForm.value.type === 'string' && typeof this.recordForm.value.account === 'string' && typeof this.recordForm.value.amount === 'string') {
-      this.recordService.post({
-        id: 1,
-        type: this.recordForm.value.type,
-        account: this.recordForm.value.account,
-        amount: parseFloat(this.recordForm.value.amount),
-      });
-    }
-    else {
-      console.error('typeof error');
-    }
+    setTimeout(() => {
+      if (typeof this.recordForm.value.type === 'string' && typeof this.recordForm.value.account === 'string' && typeof this.recordForm.value.amount === 'string') {
+        this.recordService.post({
+          id: 1,
+          type: this.recordForm.value.type,
+          account: this.recordForm.value.account,
+          amount: parseFloat(this.recordForm.value.amount),
+        });
+        console.log('new record saved');
+      }
+      else {
+        console.error('typeof error');
+      }
+    }, 5000);
+
   }
 }

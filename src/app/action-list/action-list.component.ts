@@ -36,4 +36,10 @@ export class ActionListComponent {
     console.log('Changing state of action signal to "delete"');
     this.action.set('delete');
   }
+
+  blur(): void {
+    for (const element of document.getElementsByTagName("li")) {
+      element.blur();
+    }
+  }
 }

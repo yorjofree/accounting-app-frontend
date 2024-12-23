@@ -1,7 +1,7 @@
 <h2>What would you like to do?</h2>
 <ul>
-    <li (click)="getRecords()" routerLink="get">{{ record.get() }}</li>
-    <li (click)="postRecord()" routerLink="post">{{ record.post() }}</li>
+    <li (click)="getRecords()" (mouseup)="blur()" routerLink="get">{{ record.get() }}</li>
+    <li (click)="postRecord()" (mouseup)="blur()" routerLink="post">{{ record.post() }}</li>
     <li (click)="updateRecord()">{{ record.update() }}</li>
     <li (click)="deleteRecord()">{{ record.delete() }}</li>
 </ul>

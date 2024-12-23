@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RecordComponent } from '../record/record.component';
 import { RecordService } from '../record.service';
 
