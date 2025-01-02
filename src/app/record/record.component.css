@@ -1,16 +1,49 @@
 .record {
     display: flex;
     flex-direction: row;
+    text-align: center;
+    border: 1px solid;
+    padding: 5px;
 }
 
 .type, .account {
-    width: 40%;
-    border: 1px solid;
+    width: 38%;
     margin: 0px;
 }
 
 .amount {
     width: 20%;
-    border: 1px solid;
     margin: 0px;
+}
+
+.options {
+    width: 4%;
+    min-width: 30px;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+}
+
+#option-menu {
+    width: 30px;
+    border-radius: 10px;
+}
+
+#option-menu:hover {
+    cursor: pointer;
+    background-color: rgb(210, 210, 210);
+}
+
+.option-menu {
+    position: absolute;
+    z-index: 1;
+    right: 0px;
+    top: 20px;
+    margin: 0;
+    border: 1px solid;
+    display: none;
+    background-color: white;
+    color: red;
 }

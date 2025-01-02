@@ -10,6 +10,8 @@
 .headings {
     display: flex;
     flex-direction: row;
+    border: 1px solid;
+    padding: 5px;
 }
 
 h4 {
@@ -19,11 +21,14 @@ h4 {
 }
 
 .type, .account {
-    width: 40%;
-    border: 1px solid;
+    width: 38%;
 }
 
 .amount {
     width: 20%;
-    border: 1px solid;
+}
+
+.options {
+    width: 4%;
+    min-width: 20px;
 }

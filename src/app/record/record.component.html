@@ -1,5 +1,12 @@
-<div class="record">
+<div class="record" (click)="hideOptionMenus()">
     <div class="type">{{ record().type }} </div>
     <div class="account" >{{ record().account }} </div>
     <div class="amount">{{ record().amount }} </div>
+    <div class="options">
+        <div id="option-menu" (click)="showOptionMenu($event)">...</div>
+        <ul class="option-menu" [id]="name()">
+            <li>update</li>
+            <li>delete</li>
+        </ul>
+    </div>
 </div>
